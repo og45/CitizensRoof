@@ -5,10 +5,26 @@
 .hero {
   width: 100%;
   min-height: 80vh;
-  position: relative;
+  position: relative; // Ensure hero can contain absolutely positioned elements
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
+  overflow: hidden; // Ensures the video does not overflow outside the hero
+
+  // Video background styles
+  .hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; // Place behind content
+    transform: translate(-50%, -50%);
+    object-fit: cover; // Makes sure the video covers the entire area without distortion
+    opacity: .8;
+  }
 
   h1 {
     margin: 0;
